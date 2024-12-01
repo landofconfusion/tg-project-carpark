@@ -11,11 +11,15 @@ class Sensor(ABC):
         return f'Sensor {self.id} status is {self.is_active}'
 
     @abstractmethod
-    def update_car_park(self):
+    def update_car_park(self, plate):
         ...
 
     def _scan_plate(self):
-        return 'FAKE' + format(random.randint(0,999), "03d")
+        return 'FAKE-' + format(random.randint(0,999), "03d")
+
+    def detect_vehicle(self):
+        plate = self._scan_plate()
+        self.update_car_park(plate)
 
 
 class EntrySensor(Sensor):
