@@ -1,3 +1,5 @@
+import random
+
 from display import Display
 from sensor import Sensor
 
@@ -38,7 +40,7 @@ class CarPark:
         return self.capacity
 
     def update_displays(self):
-        data = {"available_bays":self.available_bays, "temperature": 25}
+        data = {"available_bays": self.available_bays, "temperature": format(random.randint(18,40) + 'degrees')}
         for display in self.displays:
             display.update(data)
 
