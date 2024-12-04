@@ -17,6 +17,7 @@ class TestCarPark(unittest.TestCase):
         self.assertEqual(self.car_park.displays, [])
         self.assertEqual(self.car_park.available_bays, 100)
         self.assertEqual(self.car_park.log_file, Path("log.txt"))
+        self.assertEqual(self.car_park.config_file, Path("config.json"))
 
     def test_add_car(self):
         self.car_park.add_car("FAKE-001")
