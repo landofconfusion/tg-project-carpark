@@ -1,15 +1,24 @@
+from pathlib import Path
 from car_park import CarPark
 from sensor import EntrySensor, ExitSensor
 from display import Display
 
-cp = CarPark(100, "Perth City central")
-d1 = Display("Perth Display 001", cp)
-d2 = Display("Perth Display 002", cp)
-d3 = Display("Perth Display 003", cp)
-cp.register(d1)
-cp.register(d2)
-#cp.register(d3)
-es = EntrySensor("Perth Entry no 321", cp)
-es.detect_vehicle()
-exits = ExitSensor("Perth Exit no 123", cp)
-exits.detect_vehicle()
+moondalup_car_park = CarPark(100, "Moondalup City", log_file = Path("moondalup.txt"))
+display_one = Display("001", message = "Welcome to Moondalup", car_park = moondalup_car_park, is_on = True)
+moondalup_car_park.register(display_one)
+entry_sensor = EntrySensor("001", is_active = True, car_park=moondalup_car_park)
+exit_sensor = ExitSensor("002", is_active = True, car_park=moondalup_car_park)
+
+entry_sensor.detect_vehicle()
+entry_sensor.detect_vehicle()
+entry_sensor.detect_vehicle()
+entry_sensor.detect_vehicle()
+entry_sensor.detect_vehicle()
+entry_sensor.detect_vehicle()
+entry_sensor.detect_vehicle()
+entry_sensor.detect_vehicle()
+entry_sensor.detect_vehicle()
+entry_sensor.detect_vehicle()
+exit_sensor.detect_vehicle()
+exit_sensor.detect_vehicle()
+

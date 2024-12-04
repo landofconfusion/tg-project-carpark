@@ -8,7 +8,7 @@ class Display:
     def update(self, message):
         self.message = message
         print("-" * 80)
-        print(f'ID: {self.id}')
+        print(f'Display ID: {self.id}')
         print(message)
         print("-" * 80)
 

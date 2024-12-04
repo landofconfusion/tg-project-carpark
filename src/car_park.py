@@ -33,13 +33,13 @@ class CarPark:
 
     def add_car(self, plate):
         self.plates.append(plate)
-        print("called add_car in carpark")
+        #print("called add_car in carpark")
         self.update_displays()
         self._log_car_activity(plate, "entered")
 
     def remove_car(self, plate):
         self.plates.remove(plate)
-        print("called remove_car in carpark")
+        #print("called remove_car in carpark")
         self.update_displays()
         self._log_car_activity(plate, "exited")
 
@@ -50,7 +50,7 @@ class CarPark:
     def update_displays(self):
         random_temperature = format(random.randint(18,40))
         for display in self.displays:
-            print(f'Updating display {display.id}')
+            #print(f'Updating display {display.id}')
             display.update(f"Available Bays: {self.available_bays}\nTemperature: {random_temperature} degrees")
 
     def _log_car_activity(self, plate, action):
