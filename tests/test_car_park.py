@@ -1,7 +1,5 @@
 import unittest
 from car_park import CarPark
-from sensor import Sensor
-from display import Display
 
 class TestCarPark(unittest.TestCase):
     def setUp(self):

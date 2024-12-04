@@ -25,22 +25,23 @@ class CarPark:
 
     def add_car(self, plate):
         self.plates.append(plate)
+        print("called add_car in carpark")
         self.update_displays()
 
     def remove_car(self, plate):
         self.plates.remove(plate)
+        print("called remove_car in carpark")
         self.update_displays()
+
 
     @property
     def available_bays(self):
-        if self.capacity <= 0:
-            self.capacity = 0
-        else:
-            self.capacity -= len(self.plates)
-        return self.capacity
+        return max(0,self.capacity - len(self.plates))
 
     def update_displays(self):
-        data = {"available_bays": self.available_bays, "temperature": format(random.randint(18,40) + 'degrees')}
+        random_temperature = format(random.randint(18,40))
         for display in self.displays:
-            display.update(data)
+            print(f'Updating display {display.id}')
+            display.update(f"Available Bays: {self.available_bays}\nTemperature: {random_temperature} degrees")
+
 

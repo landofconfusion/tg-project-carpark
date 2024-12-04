@@ -25,7 +25,7 @@ class Sensor(ABC):
 class EntrySensor(Sensor):
     def update_car_park(self, plate):
         self.car_park.add_car(plate)
-        print(f'Incoming vehicle detected, plate: {plate}')
+        print(f'Incoming 🚘 vehicle detected, plate: {plate}')
 
 
 class ExitSensor(Sensor):
@@ -34,4 +34,4 @@ class ExitSensor(Sensor):
 
     def update_car_park(self, plate):
         self.car_park.remove_car(plate)
-        print(f'Outgoing vehicle detected, plate: {plate}')
+        print(f'Outgoing 🚗 vehicle detected, plate: {plate}')
